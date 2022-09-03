@@ -17,6 +17,6 @@ app.use(express.json()); // parse requests of content-type - application/json
 app.use(express.urlencoded({extended:false})) // คำสั่งแปลงข้อมูลที่ถูกส่งมาแบบ post 
 app.use(router)
 
-app.listen(8080,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("รัน server ที่ port 8080")
 })
