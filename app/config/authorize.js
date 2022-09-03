@@ -9,7 +9,7 @@ const authorization = ((req, res, next) => {
     // ถ้าไม่มีการส่งค่ามา ส่ง ข้อความ json พร้อม status 401 Unauthorized
     if (authorization === undefined) return res.status(401).json({
         "status": 401,
-        "message": "Unauthorized"
+        "message": "ไม่มีการส่งค่า authorization เข้ามา"
     })   
     
     // ถ้ามีการส่งค่ามา แยกเอาเฉพาะค่า token จากที่ส่งมา 'Bearer xxxx' เราเอาเฉพาะ xxxx
@@ -19,7 +19,7 @@ const authorization = ((req, res, next) => {
 
     if(token === undefined) return res.status(401).json({ // หากไมมีค่า token
         "status": 401,
-        "message": "Unauthorized"
+        "message": "ไม่มีการส่งค่า Token เข้ามา"
     })   
 
     // ใช้ค่า privateKey เ็น buffer ค่าที่อ่านได้จากไฟล์ private.key ในโฟลเดอร์ config
@@ -29,7 +29,7 @@ const authorization = ((req, res, next) => {
     jwt.verify(token, privateKey, function(error, decoded) {
         if(error) return res.status(401).json({ // หาก error ไม่ผ่าน
             "status": 401,
-            "message": "Unauthorized"
+            "message": "Token ไม่ถูกต้อง"
         })   
         console.log(error)
         console.log(decoded)     
