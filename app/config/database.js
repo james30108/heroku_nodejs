@@ -13,10 +13,9 @@ module.exports = () => {
         host     : "migae5o25m2psr4q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         user     : "zkykl3itog76ird2",
         password : "ms1r1b2la5a5jp2e",
-
     })
 
-    create.query("CREATE DATABASE IF NOT EXISTS demo_nodeJS")
+    //create.query("CREATE DATABASE IF NOT EXISTS demo_nodeJS")
 
     // connect
     // const connect = new Sequelize("demo_nodeJS", "root", "", {
