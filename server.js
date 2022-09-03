@@ -7,7 +7,7 @@ const app           = express()
 
 // สำหรับรับข้อมูล จาก API ฝั่ง Frontend 
 var corsOptions = {
-    origin: "http://localhost:3000" // ใส่ที่มาของเว็บที่ส่งข้อมุลเข้ามา
+    origin: "https://nathasophonvuedemo.herokuapp.com/" // ใส่ที่มาของเว็บที่ส่งข้อมุลเข้ามา
 };
 
 // use คือการกำหนด middleware หรือก็คือตัวกรอง request ที่ส่งเข้ามา
